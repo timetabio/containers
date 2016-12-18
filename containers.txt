@@ -1,0 +1,6 @@
+build
+library/elastic
+library/fpm
+library/php
+library/postgres
+library/redis

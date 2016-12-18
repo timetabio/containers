@@ -1,0 +1,24 @@
+sudo: required
+dist: trusty
+group: edge
+
+services:
+- docker
+
+env:
+- TTIO_BUILD_ENV=production
+
+before_install:
+- docker login -p ${TTIO_DOCKER_PASSWORD} -u bot https://docker.ttio.cloud:5000
+
+script:
+- ./build.sh
+
+deploy:
+  provider: script
+  skip_cleanup: true
+
+  script: ./scripts/push.sh
+
+  on:
+    tags: true
