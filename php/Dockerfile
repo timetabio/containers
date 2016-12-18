@@ -11,6 +11,15 @@ RUN apt-get update && \
     apt-get clean  && \
     rm -rf /tmp/*
 
+RUN apt-get update && \
+    apt-get -y install locales && \
+    echo "en_GB UTF-8" >> /etc/locale.gen && \
+    locale-gen && \
+    apt-get clean
+
+RUN docker-php-ext-install gettext && \
+    rm -rf /tmp/*
+
 COPY php/php.ini /usr/local/etc/php/
 
 RUN mkdir -p /data

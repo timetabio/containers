@@ -19,6 +19,12 @@ RUN pecl install raphf && \
     docker-php-ext-enable http && \
     rm -rf /tmp/*
 
+RUN apt-get update && \
+    apt-get -y install locales && \
+    echo "en_GB UTF-8" >> /etc/locale.gen && \
+    locale-gen && \
+    apt-get clean
+
 RUN docker-php-ext-install gettext && \
     rm -rf /tmp/*
 
