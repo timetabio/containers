@@ -13,6 +13,7 @@ RUN apt-get update && \
 
 COPY php/php.ini /usr/local/etc/php/
 
+RUN mkdir -p /data
 RUN touch /data/nsalog.txt
 
 VOLUME /data/nslog.txt

@@ -24,6 +24,7 @@ RUN docker-php-ext-install gettext && \
 
 COPY php/php.ini /usr/local/etc/php/
 
+RUN mkdir -p /data
 RUN touch /data/nsalog.txt
 
 VOLUME /data/nslog.txt
