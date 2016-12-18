@@ -26,7 +26,7 @@ apply () {
     return
   fi
 
-  psql -U postgres -a -f ${1}
+  psql -U postgres -h ${POSTGRES_HOST} -a -f ${1}
   touch ${STORAGE_DIR}/${CHECKSUM}
 }
 
