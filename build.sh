@@ -14,17 +14,27 @@ for CONTAINER in ${CONTAINERS[@]}; do
         VERSION=${1}
     fi
 
-    tput setaf 2
-    if [ -z ${VERSION} ]; then
-        echo "==> Building container '${TAG}' without version..."
-    else
-        echo "==> Building container '${TAG}' with version '${VERSION}'..."
+    if [ ! -z ${TRAVIS} ]; then
+        echo -en "travis_fold:start:${SHORT_NAME}\\r"
     fi
+
+    tput setaf 8
+
+    if [ -z ${VERSION} ]; then
+        echo "Building container '${TAG}' without version"
+    else
+        echo "Building container '${TAG}' with version '${VERSION}'"
+    fi
+
     tput sgr0
 
     docker build -t ${TAG} -f ${SHORT_NAME}/Dockerfile .
 
     if [ ! -z ${VERSION} ]; then
         docker tag ${TAG} docker.ttio.cloud:5000/${CONTAINER}:${VERSION}
+    fi
+
+    if [ ! -z ${TRAVIS} ]; then
+        echo -en "travis_fold:end:${SHORT_NAME}\\r"
     fi
 done
