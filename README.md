@@ -1,6 +1,6 @@
 # containers
 
-[![Build Status](https://travis-ci.com/timetabio/containers.svg?token=W8o5L3HCbrzYGBDzh4dy&branch=master)](https://travis-ci.com/timetabio/containers)
+[![Build Status](https://travis-ci.org/timetabio/containers.svg?branch=master)](https://travis-ci.org/timetabio/containers)
 
 ## Building
 
