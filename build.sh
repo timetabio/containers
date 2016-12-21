@@ -18,7 +18,7 @@ for CONTAINER in ${CONTAINERS[@]}; do
         echo -en "travis_fold:start:${SHORT_NAME}\\r"
     fi
 
-    tput setaf 8
+    tput setaf 3
 
     if [ -z ${VERSION} ]; then
         echo "Building container '${TAG}' without version"
