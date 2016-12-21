@@ -9,9 +9,7 @@ services:
 - docker
 
 env:
-  global:
-  - TTIO_BUILD_ENV=production
-  - secure: "ZuQYV2b5Nui4ZytgpfxJREwgGm+fXGFPUrD5O8vWs1WZzt3qlvMXoRRKqnqduycRKH12yjAtObmp8eWGtu8u8R6xdxRj/ntvnp5oAZPLyqYJJOMb4HiwTHPubm9b/7SFxK97KaApDxReNL/CJssRkiWeCVcFVMGhBngTm4uDK/r9hwAGpiNf0drFVB9tuhTdkJ1pPCk1GWG8J5d1xbPrWCVwkzZoy+lzNimWLHsLZmi4SFItk263eqMkIc7pnScUDdJtYFa2BfRztIdxPQMWI2Tfepan+tx2eyB4gXn1T+QSeIacFyfe3E4VFq8x7X0H3G+u0iZg5HoiRjqvkEsxB1iAZgwIoaRH5tjPG4ID0XeYmSpmk7HLeNSNNRQdJJkBURL0HkgZVLyt/G0XIzn31mcBO2lJ21k5FzldsGysGS9KKuUKAM70VIv2GfDIzm2TwbzAmE6R/fdudWpG3E4eTRjYAh4mbu4G9Rfg96YYa+6CMQtGfPHnyyy46bspKlEnTIHINGZXwIOPB+QWXZaqIWv1IL+EGHNI9LWmmNMmzAKTFjuxOp9SrPj/1DZnmURW7GarU35S2i5vN4KLQ0tk3TcVFo2Z51WMSDnEwgus+DBhjjP4XjsD8Pqm6zchg1fUWem8NK2kqdFJpob3dOsVTRWoFpf4qWCbG5EnNbJQ5zo="
+- TTIO_BUILD_ENV=production
 
 before_install:
 - docker login -p ${TTIO_DOCKER_PASSWORD} -u bot https://docker.ttio.cloud:5000
