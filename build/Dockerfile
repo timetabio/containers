@@ -29,24 +29,25 @@ RUN apk add --no-cache autoconf g++ make && \
     rm -rf /tmp/pear && \
     apk del autoconf g++ make
 
+RUN apk add --no-cache bash ncurses
+RUN apk add --no-cache gettext
+RUN apk add --no-cache git
+
 # Install dependencies
 RUN apk add --no-cache nodejs && \
     npm install -g \
-        babel-preset-es2015@6.16.0 \
         rollup@0.36.1 \
         rollup-plugin-babel@2.6.1 \
         rollup-plugin-uglify@1.0.1 \
         babel-plugin-external-helpers@6.8.0 \
+        babel-preset-env@1.1.4 \
         standard@8.0.0 \
-        uglify-js@2.7.3 \
+        "git://github.com/mishoo/UglifyJS2.git#harmony" \
         autoprefixer@6.4.1 \
         cssnano@3.7.4 \
         less@2.7.1 \
         postcss-cli@2.6.0 && \
     npm uninstall -g npm
-
-RUN apk add --no-cache bash ncurses
-RUN apk add --no-cache gettext
 
 WORKDIR /data/code
 VOLUME /data/code
