@@ -32,6 +32,8 @@ RUN apk add --no-cache autoconf g++ make && \
 RUN apk add --no-cache bash ncurses
 RUN apk add --no-cache gettext
 RUN apk add --no-cache git
+RUN apk add --no-cache python py-pip && \
+    pip install chkcrontab
 
 # Install dependencies
 RUN apk add --no-cache nodejs && \
