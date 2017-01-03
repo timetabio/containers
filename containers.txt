@@ -4,3 +4,4 @@ library/fpm
 library/php
 library/postgres
 library/redis
+library/nginx
